@@ -12,6 +12,9 @@ class MyTab extends StatefulWidget {
 class _MyTabState extends State<MyTab> {
   @override
   Widget build(BuildContext context) {
-    return Tab();
+    return Tab(
+      height: 80,
+      icon: Image.asset(widget.iconPath, height: 40),
+    );
   }
 }

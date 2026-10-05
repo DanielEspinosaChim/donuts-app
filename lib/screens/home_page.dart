@@ -1,5 +1,5 @@
+import 'package:donuts_app/utils/my_tab.dart';
 import 'package:flutter/material.dart';
-import '../utils/my_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,13 +9,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //lista de pestañas
-  List<Widget> myTabs = const [
-    MyTab(iconPath: 'assets/icons/donut.png', iconName: 'Donut'),
-    MyTab(iconPath: 'assets/icons/burger.png', iconName: 'Burger'),
-    MyTab(iconPath: 'assets/icons/smoothie.png', iconName: 'Smoothie'),
-    MyTab(iconPath: 'assets/icons/pancakes.png', iconName: 'Pancakes'),
-    MyTab(iconPath: 'assets/icons/pizza.png', iconName: 'Pizza'),
+  List<Widget> myTabs = [
+    //Donuts tab
+    const MyTab(iconPath: 'assets/icons/donut.png', iconName: 'Donuts'),
+    //Burgers tab
+    const MyTab(iconPath: 'assets/icons/burger.png', iconName: 'Burgers'),
+    //Smoothies tab
+    const MyTab(iconPath: 'assets/icons/smoothie.png', iconName: 'Smoothies'),
+    //Pancakes tab
+    const MyTab(iconPath: 'assets/icons/pancakes.png', iconName: 'Pancakes'),
+    //Pizzas tab
+    const MyTab(iconPath: 'assets/icons/pizza.png', iconName: 'Pizzas'),
   ];
 
   @override
@@ -30,48 +34,39 @@ class _HomePageState extends State<HomePage> {
           //icono de la derecha
           actions: [
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 24.0),
               child: Icon(Icons.person, color: Colors.grey),
             ),
           ],
         ),
         body: Column(
+          //1. Texto principal
           children: [
-            //1. texto principal
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+              padding: const EdgeInsets.only(left: 24),
               child: Row(
-                children: const [
-                  Text('I want to ', style: TextStyle(fontSize: 32)),
+                children: [
+                  Text('I want to ', style: TextStyle(fontSize: 24)),
                   Text(
                     'Eat',
                     style: TextStyle(
-                      fontSize: 32,
+                      //tamaño de letra
+                      fontSize: 24,
+                      //Negritas
                       fontWeight: FontWeight.bold,
+                      //subrrayado
                       decoration: TextDecoration.underline,
                     ),
                   ),
                 ],
               ),
             ),
-
-            //2. pestañas (TabBar)
+            //2. Pestañas (TabBar)
             TabBar(tabs: myTabs),
 
-            //3. contenido de pestañas (TabBarView)
-            Expanded(
-              child: TabBarView(
-                children: const [
-                  Center(child: Text('Donuts')),
-                  Center(child: Text('Burgers')),
-                  Center(child: Text('Smoothies')),
-                  Center(child: Text('Pancakes')),
-                  Center(child: Text('Pizza')),
-                ],
-              ),
-            ),
+            //3. Contenido de pestañas (TabBarView)
 
-            //4. carrito (cart)
+            //4. Carrito (Cart)
           ],
         ),
       ),
