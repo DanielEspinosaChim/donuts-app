@@ -11,11 +11,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //lista de pestañas
   List<Widget> myTabs = const [
-    MyTab(iconPath: 'lib/icons/donut.png'),
-    MyTab(iconPath: 'lib/icons/burger.png'),
-    MyTab(iconPath: 'lib/icons/smoothie.png'),
-    MyTab(iconPath: 'lib/icons/pancakes.png'),
-    MyTab(iconPath: 'lib/icons/pizza.png'),
+    MyTab(iconPath: 'assets/icons/donut.png', iconName: 'Donut'),
+    MyTab(iconPath: 'assets/icons/burger.png', iconName: 'Burger'),
+    MyTab(iconPath: 'assets/icons/smoothie.png', iconName: 'Smoothie'),
+    MyTab(iconPath: 'assets/icons/pancakes.png', iconName: 'Pancakes'),
+    MyTab(iconPath: 'assets/icons/pizza.png', iconName: 'Pizza'),
   ];
 
   @override
